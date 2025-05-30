@@ -6,28 +6,23 @@ import keyboard  # Install this with: pip install keyboard
 from win32gui import FindWindow, FindWindowEx, SendMessage
 from win32con import LVM_GETITEMCOUNT, LVM_SETITEMPOSITION, GWL_STYLE, LVS_AUTOARRANGE, SM_CXSCREEN, SM_CYSCREEN
 
-# Initialize pygame
 pygame.mixer.init()
-pygame.mixer.music.load('小城夏天.mp3')  # Change to your file
+pygame.mixer.music.load('recording3.mp3')  
 pygame.mixer.music.play(-1)
 
-# Find desktop icon list window
 zm_wnd = FindWindow('Program', None)
 bz_wnd = FindWindowEx(zm_wnd, 0, 'SHELLDLL_DefView', None)
 tb_wnd = FindWindowEx(bz_wnd, 0, 'SysListView32', 'FolderView')
 
-# Disable auto-arrange
 user32 = ctypes.windll.user32
 dwStyle = user32.GetWindowLongW(tb_wnd, GWL_STYLE)
 if dwStyle & LVS_AUTOARRANGE:
     user32.SetWindowLongW(tb_wnd, GWL_STYLE, dwStyle & ~LVS_AUTOARRANGE)
 
-# Get icon count
 count = SendMessage(tb_wnd, LVM_GETITEMCOUNT)
 CX = user32.GetSystemMetrics(SM_CXSCREEN)
 CY = user32.GetSystemMetrics(SM_CYSCREEN)
 
-# Coordinates for icon positions
 love = [
     [868 * CX // 1920, 316 * CY // 1080],
     [730 * CX // 1920, 207 * CY // 1080],
