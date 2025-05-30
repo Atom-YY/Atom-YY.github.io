@@ -2,7 +2,7 @@ import ctypes
 import pygame
 import time
 import threading
-import keyboard  # Install this with: pip install keyboard
+import keyboard
 from win32gui import FindWindow, FindWindowEx, SendMessage
 from win32con import LVM_GETITEMCOUNT, LVM_SETITEMPOSITION, GWL_STYLE, LVS_AUTOARRANGE, SM_CXSCREEN, SM_CYSCREEN
 
