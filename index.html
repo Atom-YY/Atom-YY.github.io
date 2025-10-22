@@ -1,37 +1,22 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home - AtomYY</title>
-  <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Klotski</title>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <div class="dropdown">
-      <button class="dropbtn">Projects</button>
-      <div class="dropdown-content">
-        <a href="project1.html">First project</a>
-        <a href="project2.html">Project 2</a>
-        <a href="project3.html">This website</a>
-        <a href="project4.html">side gig practice</a>
-      </div>
+    <div style="position: relative;">
+        <div style="position: absolute; left: 0; top: 0; z-index: 1;">
+            <canvas id="graph"></canvas>
+        </div>
+        <div style="position: absolute; left: 0; top: 0; z-index: 1;">
+            <canvas id="board"></canvas>
+        </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">skills</button>
-      <div class="dropdown-content">
-        <a href="skill1.html">Html</a>
-        <a href="skill2.html">Python</a>
-      </div>
-    </div>
-  </nav>
-  <h1>Welcome to My Website</h1>
-  <pre>
-    This is my personal website. I have created it through GitHub to
-    display my HTML abilities. I will add to it as I learn and improve
-    existing parts if I find the will to do so. 
-  </pre>
-  <p style="color:gray;font-size:60%;" >currently this is the only tab with a proper head list directory thing, as I plan to grow the website more in the future</p>
+    <script src="data.json"></script>
+    <script src="client.js"></script>
 </body>
-</html>
